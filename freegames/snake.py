@@ -57,7 +57,7 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, 'blue')
 
     square(food.x, food.y, 9, 'green')
     update()
@@ -69,14 +69,28 @@ def change_pause():
     pause = not pause
 
 
-setup(420, 420, 370, 0)
-hideturtle()
-tracer(False)
-listen()
-onkey(lambda: change(10, 0), 'Right')
-onkey(lambda: change(-10, 0), 'Left')
-onkey(lambda: change(0, 10), 'Up')
-onkey(lambda: change(0, -10), 'Down')
-onkey(lambda: change_pause(), 'space')
-move()
-done()
+def game():
+    clear()
+    global food
+    global snake
+    global aim
+    global pause
+    pause = False
+    food = vector(0, 0)
+    snake = [vector(10, 0)]
+    aim = vector(0, -10)
+    setup(420, 420, 370, 0)
+    hideturtle()
+    tracer(False)
+    listen()
+    onkey(lambda: change(10, 0), 'Right')
+    onkey(lambda: change(-10, 0), 'Left')
+    onkey(lambda: change(0, 10), 'Up')
+    onkey(lambda: change(0, -10), 'Down')
+    onkey(lambda: change_pause(), 'space')
+    onkey(lambda: game(), 's')
+    move()
+    done()
+
+
+game()
