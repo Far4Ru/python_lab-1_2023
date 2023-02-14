@@ -33,7 +33,6 @@ def inside(head):
 def move():
     global pause
     if pause:
-        update()
         ontimer(move, 100)
         return
 
@@ -67,10 +66,7 @@ def move():
 
 def change_pause():
     global pause
-    if pause:
-        pause = False
-    else:
-        pause = True
+    pause = not pause
 
 
 setup(420, 420, 370, 0)
