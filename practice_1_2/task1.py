@@ -6,13 +6,23 @@ def compare_passwords(fp, sp):
     :type fp: str
     :param sp: Второй пароль
     :type fp: str
-    :return: Совпадение паролей
+    :return: Истинность совпадения паролей
     :rtype: bool
     """
     return fp == sp
 
 
 def compare_passwords_result(fp, sp):
+    """
+    Функция вывода результата сравнения паролей
+
+    :param fp: Первый пароль
+    :type fp: str
+    :param sp: Второй пароль
+    :type fp: str
+    :return: Строка с результатом сравнения паролей
+    :rtype: str
+    """
     if compare_passwords(fp, sp):
         return "Пароль принят"
     else:
