@@ -5,8 +5,12 @@ def is_leap_year(year):
         return False
 
 
-year = int(input("Введите год\n"))
-if is_leap_year(year):
-    print("Год " + str(year) + " - високосный")
-else:
-    print("Этот год не високосный")
+def is_leap_year_result(year):
+    if is_leap_year(year):
+        return "Год " + str(year) + " - високосный"
+    else:
+        return "Этот год не високосный"
+
+
+if __name__ == '__main__':
+    print(is_leap_year_result(int(input("Введите год\n"))))
