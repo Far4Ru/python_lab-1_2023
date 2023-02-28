@@ -6,10 +6,10 @@ def mix_colors(fc, sc):
     """
     Функция вывода цвета, полученного в результате смешения двух цветов
 
-    :param fp: Первый цвет
-    :type fp: str
-    :param sp: Второй цвет
-    :type fp: str
+    :param fc: Первый цвет
+    :type fc: str
+    :param sc: Второй цвет
+    :type fc: str
     :return: Полученный цвет
     :rtype: str
     :raises ValueError: Неверный цвет
