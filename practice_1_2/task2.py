@@ -1,4 +1,12 @@
 def seat_number_type(number):
+    """
+    Функция определения типа места в плацкартном вагоне
+
+    :param number: Номер места в вагоне
+    :type number: int
+    :return: Тип места в вагоне
+    :rtype: str
+    """
     if number < 38:
         if number % 2 == 0:
             return "Купе, нижнее"
