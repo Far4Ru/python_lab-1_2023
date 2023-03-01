@@ -7,11 +7,10 @@ def join_words():
     :rtype: str
     """
     stroke = ""
-    word = ""
-    while word != 'stop':
+    while True:
         word = input("Введите слово: ")
         if word == 'stop':
-            return stroke
+            break
         if stroke == "":
             stroke += word
         else:
