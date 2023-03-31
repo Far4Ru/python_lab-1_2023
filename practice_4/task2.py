@@ -1,14 +1,31 @@
+def division(a, b):
+    """
+    Функция деления
+
+    :param a: Первое число
+    :type a: int
+    :param b: Второе число
+    :type b: int
+    :return: Результат деления
+    :rtype: float
+    """
+    return a / b
+
+
 def division100():
+    """
+    Функция проверки деления 100 на число
+    """
     try:
         x = int(input("Введите число: "))
     except ValueError:
-        print("Введите число!")
+        print("Введено не число")
         division100()
         return
     try:
-        x/x
+        division(x, x)
     except ZeroDivisionError:
-        print("Число не делится!")
+        print("Нельзя делить на 0")
         division100()
         return
     if x % 100 == 0:
