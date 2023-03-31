@@ -45,4 +45,4 @@ import re
 from functools import reduce
 from collections import OrderedDict
 
-[Назад](..)
+[Назад](https://github.com/Far4Ru/python_labs_2023)
