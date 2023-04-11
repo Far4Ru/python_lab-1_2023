@@ -33,4 +33,4 @@ DB551,DW152.2
 
 
 
-[Назад](..)
+[Назад](https://github.com/Far4Ru/python_labs_2023)
