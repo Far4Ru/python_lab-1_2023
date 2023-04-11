@@ -1,13 +1,21 @@
 from datetime import datetime
 
 
-def task3():
-    x = datetime.strptime(input("Введите дату: "), "%d.%m.%Y")
-    if str(x.day * x.month) == str(x.year)[2:]:
-        print("Магическая дата")
+def magic_date_check(date_str):
+    """
+    Функция проверки магической даты
+
+    :param date_str: Заданная дата
+    :type date_str: str
+    :return: Результат проверки
+    :rtype: str
+    """
+    date = datetime.strptime(date_str, "%d.%m.%Y")
+    if str(date.day * date.month) == str(date.year)[2:]:
+        return "Магическая дата"
     else:
-        print("Не магическая дата")
+        return "Не магическая дата"
 
 
 if __name__ == '__main__':
-    task3()
+    print(magic_date_check(input("Введите дату: ")))
