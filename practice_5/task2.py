@@ -1,11 +1,17 @@
+from random import randint
 
-def task2():
-    s = [11, 33, 77, 99, 99]
-    duplicate = {str(x) for x in s if s.count(x) > 1}
-    x = lambda: print("Нет повторяющихся элементов")
-    y = lambda: print("Повторяется: ", " ".join(duplicate))
-    x() if len(duplicate) < 1 else y()
+
+def check_number_repeat():
+    """
+    Функция определения, есть ли в созданном списке повторяющиеся элементы
+    """
+    numbers = []
+    for i in range(5):
+        numbers.append(randint(0, 100))
+    print(numbers)
+    duplicate_numbers = {str(number) for number in numbers if numbers.count(number) > 1}
+    print("Нет повторяющихся элементов") if len(duplicate_numbers) < 1 else print("Повторяется ", " ".join(duplicate_numbers))
 
 
 if __name__ == '__main__':
-    task2()
+    check_number_repeat()
