@@ -3,17 +3,19 @@ from functools import reduce
 from collections import OrderedDict
 
 
-#class NewsDict(OrderedDict):
+class NewsDict(OrderedDict):
+    def __setitem__(self, key, value):
+        super().__setitem__(key, value)
+        self.move_to_end(key)
 
 
-def parse_line(line):
+def parse_line(line, d):
     match = re.search(r'\d+', line)
     if match:
         index = int(match.group())
         text = line[match.end():].strip()
-        return index, text
-    else:
-        return None
+        d[index] = text
+    return d
 
 
 def print_text(accumulator, current):
@@ -30,12 +32,15 @@ def print_text(accumulator, current):
 def make_news_compilation():
     with open('news.txt', 'r') as file:
         lines = file.readline()
+    d = NewsDict()
+    for line in lines:
+        d = parse_line(line, d)
+    print(d)
+    #data = list(filter(lambda x: x is not None, map(parse_line, lines)))
 
-    data = list(filter(lambda x: x is not None, map(parse_line, lines)))
+    #reduce(print_text, data, None)
 
-    reduce(print_text, data, None)
-
-    file.close()
+    #file.close()
 
 
 if __name__ == '__main__':
